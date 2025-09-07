@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover beautiful tourist destinations across Asia with Travel Asia">
+    <title>Travel Asia - Explore Beautiful Asian Destinations</title>
+    <link rel="stylesheet" href="asia.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body> 
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">TRAVEL ASIA</a></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Destinations</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="banner-container">
+            <img src="HomeImage/banner.jpg" usemap="#bannerMap" class="banner-img" alt="Travel Asia Banner">
+            <map name="bannerMap">
+                <area shape="rect" coords="800,0,1100,696"  alt="Angkor Wat" onclick="openModal('HomeImage/Angkor-Wat.jpg')" href="#" tabindex="0">
+                <area shape="rect" coords="700,0,1300,696" alt="Mount Fuji" onclick="openModal('HomeImage/mount fuji.jpeg')" href="#" tabindex="0">
+                <area shape="rect" coords="650,0,1650,696" alt="Taj Mahal" onclick="openModal('HomeImage/taj mahal.jpeg')" href="#" tabindex="0">
+                <area shape="rect" coords="50,470,500,560" alt="Start your journey here" href="destination.html">
+            </map>
+        </div>
+    </main>
+
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modal-img" alt="Destination preview">
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>This website is for project purposes only.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1AGKwZbcnE/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/seinnari_verse?igsh=MTQyMTg4NnpzNmVw" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/seinnari_verse" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://wa.me/959707077219" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@shane_tin08?_t=ZS-8zVWqScwm99&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal(src) {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
+            modal.style.display = "block";
+            modalImg.src = src;
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            modal.style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/image-map-resizer/1.0.10/js/imageMapResizer.min.js"></script>
+<script>
+    window.onload = function() {
+        imageMapResize();
+    };
+</script>
+
+</body>
+</html>

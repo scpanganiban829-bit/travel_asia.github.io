@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Travel Asia - Your gateway to discovering beautiful Asian destinations">
+    <title>About Us - Travel Asia</title>
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo"><a href="index.html">TRAVEL ASIA</a></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                <li><a href="gallery.html"><i class="fas fa-image"></i> Gallery</a></li>
+                <li><a href="destination.html"><i class="fas fa-map-marker-alt"></i> Destinations</a></li>
+                <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="about-hero">
+            <div class="container">
+                <h1>About Travel Asia</h1>
+                <p>Your trusted companion for exploring the wonders of Asia</p>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="content-grid">
+                    <div class="text-content">
+                        <h2>Our Story</h2>
+                        <p>Travel Asia was born from a passion for sharing the incredible beauty, rich culture, and diverse experiences that Asia has to offer. We believe that travel is not just about visiting places, but about creating meaningful connections with different cultures and creating lasting memories.</p>
+                        
+                        <h2>Our Mission</h2>
+                        <p>To inspire and guide travelers in discovering the most beautiful destinations across Asia, providing comprehensive information about tourist spots, cultural insights, and travel tips to make every journey unforgettable.</p>
+                        
+                        <h2>What We Offer</h2>
+                        <ul>
+                            <li><i class="fas fa-camera"></i> Curated gallery of stunning Asian destinations</li>
+                            <li><i class="fas fa-info-circle"></i> Detailed information about each tourist spot</li>
+                            <li><i class="fas fa-map-marked-alt"></i> Expert travel recommendations</li>
+                            <li><i class="fas fa-users"></i> Community of fellow Asia enthusiasts</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stats-content">
+                        <h2>Travel Asia by Numbers</h2>
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <h3>50+</h3>
+                                <p>Featured Destinations</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-flag"></i>
+                                <h3>15+</h3>
+                                <p>Asian Countries</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-users"></i>
+                                <h3>10K+</h3>
+                                <p>Happy Travelers</p>
+                            </div>
+                            <div class="stat-item">
+                                <i class="fas fa-star"></i>
+                                <h3>5 Star</h3>
+                                <p>Average Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team-section">
+            <div class="container">
+                <h2>Why Choose Us?</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-globe-asia"></i>
+                        <h3>Local Expertise</h3>
+                        <p>Our team has extensive knowledge of Asian cultures and destinations</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Trusted Information</h3>
+                        <p>All our content is carefully researched and regularly updated</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-heart"></i>
+                        <h3>Passionate Service</h3>
+                        <p>We're dedicated to helping you discover the best of Asia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<footer class="footer">
+        <div class="footer-container">
+            <p>This website is for project purposes only.</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/share/1AGKwZbcnE/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/seinnari_verse?igsh=MTQyMTg4NnpzNmVw" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/seinnari_verse" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://wa.me/959707077219" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.tiktok.com/@shane_tin08?_t=ZS-8zVWqScwm99&_r=1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobileMenuToggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        });
+
+        // Animate stats on scroll
+        function animateStats() {
+            const statItems = document.querySelectorAll('.stat-item h3');
+            statItems.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                if (!isNaN(target)) {
+                    let current = 0;
+                    const increment = target / 100;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + (stat.textContent.includes('+') ? '+' : '');
+                    }, 20);
+                }
+            });
+        }
+
+        // Intersection Observer for stats animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateStats();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-content');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
